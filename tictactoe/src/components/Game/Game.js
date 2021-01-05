@@ -1,8 +1,8 @@
 
-import './App.css';
+import './Game.css';
 
-// add the fragment sentax for HTML <>
-function App() {
+// import and conver App.js then export
+export const Game = () => {
   return ( 
     <> 
     <div id="game">
@@ -54,4 +54,4 @@ function App() {
   );
 }
 
-export default App;
+
