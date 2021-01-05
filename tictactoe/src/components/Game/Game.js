@@ -10,12 +10,17 @@ export const Game = () => {
     const [xIsNext, setXIsNext] = useState(true);
     const winningCombination = [];
 
+    // lock the cell after clicking once
+    const isCellEmpty = (cellIndex) => cellValues[cellIndex] === '';
+
     const onCellClicked = (cellIndex) => {
+        if (isCellEmpty(cellIndex)) {
         const newCellValues = [...cellValues];
        newCellValues[cellIndex] = xIsNext? 'X': '0';
        setCellValues(newCellValues);
        setXIsNext(!xIsNext);
-      }
+        }
+      };
 
   return ( 
     <> 
