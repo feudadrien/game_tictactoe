@@ -6,8 +6,8 @@ import './Game.css';
 // import and conver App.js then export
 // replace the board div with the baord component.
 export const Game = () => {
-    const cellValues = ['0', 'X', 'X', '0', 'X', 'X', 'X', '0', 'X'];
-    const winningCombination = [2, 4, 6];
+    const cellValues = ['', '', '', '', '', '', '', '', ''];
+    const winningCombination = [];
   return ( 
     <> 
     <div id="game">

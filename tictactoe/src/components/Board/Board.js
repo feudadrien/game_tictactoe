@@ -6,7 +6,9 @@ import './Board.css';
 // import and conver App.js then export
 // import cell buttons from cell component and duplicate
 export const Board = (props) => {
-
+const cellClicked = (cellIndex) => {
+  console.log(`Cell ${cellIndex} clicked.`);
+}
  
   const cells = props.cellValues.map((value, index) => {
     const canHighlight = props.winningCombination && 
@@ -15,7 +17,8 @@ export const Board = (props) => {
    key={index} 
    value={value} 
    canHighlight={canHighlight } 
-   />
+   onClick={() => cellClicked(index)}
+   />;
 });
   return ( 
     <div id="board">

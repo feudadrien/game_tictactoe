@@ -23,7 +23,7 @@ export const Cell = (props) => {
   return ( 
     // adding the content of the cell plus the class populated
     // winner class from CSS
-    <button className={cellClasses}>
+    <button className={cellClasses} onClick={props.onClick}> 
               <span className={cellContentClasses}>{props.value}</span>
           </button>
   );
