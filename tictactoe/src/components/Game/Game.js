@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 
 import { Board } from '../Board/Board';
 import './Game.css';
@@ -6,11 +6,13 @@ import './Game.css';
 // import and conver App.js then export
 // replace the board div with the baord component.
 export const Game = () => {
-    const cellValues = ['', '', '', '', '', '', '', '', ''];
+    const [cellValues, setCellValues] = useState(['', '', '', '', '', '', '', '', '']);
     const winningCombination = [];
 
     const onCellClicked = (cellIndex) => {
-        console.log(`Cell ${cellIndex} clicked.`);
+        const newCellValues = [...cellValues];
+       newCellValues[cellIndex] = 'X';
+       setCellValues(newCellValues);
       }
 
   return ( 
