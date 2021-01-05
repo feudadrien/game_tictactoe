@@ -1,4 +1,5 @@
 import React, { useState} from 'react';
+import { calculateWinner } from '../../utils/WinnerCalculator';
 
 import { Board } from '../Board/Board';
 import { ResultModal } from '../ResultModal/ResultModal';
@@ -18,15 +19,15 @@ export const Game = () => {
     const onCellClicked = (cellIndex) => {
         if (isCellEmpty(cellIndex)) {
         const newCellValues = [...cellValues];
-
+        newCellValues[cellIndex] = xIsNext? 'X': '0';
         // calculate result
-
+const calcResult = calculateWinner(newCellValues, cellIndex);
        
 
-       newCellValues[cellIndex] = xIsNext? 'X': '0';
+      
        setCellValues(newCellValues);
        setXIsNext(!xIsNext);
-       setIsGameOver(true);
+       setIsGameOver(calcResult );
         }
       };
 
