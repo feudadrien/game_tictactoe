@@ -8,15 +8,15 @@ import './Board.css';
 export const Board = () => {
   return ( 
     <div id="board">
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
+          <Cell value="X"/>
+          <Cell value="X"/>
+          <Cell value="X"/>
+          <Cell value=""/>
+          <Cell value="0"/>
+          <Cell value="X"/>
+          <Cell value="X"/>
+          <Cell value=""/>
+          <Cell value=""/>
       </div>
   );
 }
