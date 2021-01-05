@@ -7,12 +7,14 @@ import './Game.css';
 // replace the board div with the baord component.
 export const Game = () => {
     const [cellValues, setCellValues] = useState(['', '', '', '', '', '', '', '', '']);
+    const [xIsNext, setXIsNext] = useState(true);
     const winningCombination = [];
 
     const onCellClicked = (cellIndex) => {
         const newCellValues = [...cellValues];
-       newCellValues[cellIndex] = 'X';
+       newCellValues[cellIndex] = xIsNext? 'X': '0';
        setCellValues(newCellValues);
+       setXIsNext(!xIsNext);
       }
 
   return ( 
@@ -23,6 +25,7 @@ export const Game = () => {
       cellValues={cellValues}
       winningCombination={winningCombination}
       cellClicked={onCellClicked}
+     
       />
   </div>
 
