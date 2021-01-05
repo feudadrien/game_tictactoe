@@ -10,12 +10,13 @@ export const ResultModal = (props) => {
 });
  
 
+const message = props.winner ? `winner is ${props.winner}.`: 'It is a tied.';
   return ( 
     <div id="modal-overlay" className={ResultModalClasses }>
     <div id="game-result-modal">
         <div id="result-container">
             <div id="winner-container">
-                <span></span>
+                <span>{message}</span>
             </div>
         </div>
         <div id="new-game-container">
