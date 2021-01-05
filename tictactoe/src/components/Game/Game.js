@@ -1,41 +1,16 @@
+import React from 'react';
 
+import { Board } from '../Board/Board';
 import './Game.css';
 
 // import and conver App.js then export
+// replace the board div with the baord component.
 export const Game = () => {
   return ( 
     <> 
     <div id="game">
       <h1>Tic Tac Toe</h1>
-      <div id="board">
-          <button className="cell">
-              <span className="cell-content"></span>
-          </button>
-          <button className="cell">
-              <span className="cell-content"></span>
-          </button>
-          <button className="cell">
-              <span className="cell-content"></span>
-          </button>
-          <button className="cell">
-              <span className="cell-content"></span>
-          </button>
-          <button className="cell">
-              <span className="cell-content"></span>
-          </button>
-          <button className="cell">
-              <span className="cell-content"></span>
-          </button>
-          <button className="cell">
-              <span className="cell-content"></span>
-          </button>
-          <button className="cell">
-              <span className="cell-content"></span>
-          </button>
-          <button className="cell">
-              <span className="cell-content"></span>
-          </button>
-      </div>
+      <Board />
   </div>
 
   <div id="modal-overlay">
