@@ -35,7 +35,8 @@ export const Game = () => {
       />
   </div>
 
-  <ResultModal />
+  <ResultModal 
+   isGameOver={false}/>
   </>
   );
 }

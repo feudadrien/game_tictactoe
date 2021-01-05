@@ -1,14 +1,17 @@
 import React from 'react';
+import classNames from 'classnames'
 
 import './ResultModal.css';
 
 // import and conver App.js then export
 // import cell buttons from cell component and duplicate
-export const ResultModal = () => {
+export const ResultModal = (props) => {
+    const ResultModalClasses = classNames({'modal-open': props.isGameOver
+});
  
 
   return ( 
-    <div id="modal-overlay">
+    <div id="modal-overlay" className={ResultModalClasses }>
     <div id="game-result-modal">
         <div id="result-container">
             <div id="winner-container">
