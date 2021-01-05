@@ -8,9 +8,16 @@ import './Board.css';
 export const Board = () => {
 
   const cellValues = ['0', 'X', 'X', '0', 'X', 'X', 'X', '0', 'X'];
-  const cells = cellValues.map((value, index) =>
-    <Cell key={index} value={value} canHighlight={false} />
-  );
+  const winningCombination = [2, 4, 6];
+  const cells = cellValues.map((value, index) => {
+    const canHighlight = winningCombination && 
+                         winningCombination.indexOf(index) >= 0; // or 0
+   return  <Cell 
+   key={index} 
+   value={value} 
+   canHighlight={canHighlight } 
+   />
+});
   return ( 
     <div id="board">
           {cells}
