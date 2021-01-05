@@ -6,17 +6,14 @@ import './Board.css';
 // import and conver App.js then export
 // import cell buttons from cell component and duplicate
 export const Board = () => {
+
+  const cellValues = ['0', 'X', 'X', '0', 'X', 'X', 'X', '0', 'X'];
+  const cells = cellValues.map((value, index) =>
+    <Cell key={index} value={value} canHighlight={false} />
+  );
   return ( 
     <div id="board">
-          <Cell value="0" canHighlight={false}/>
-          <Cell value="X" canHighlight={false}/>
-          <Cell value="X" canHighlight={true}/>
-          <Cell value="0" canHighlight={false}/>
-          <Cell value="X" canHighlight={true}/>
-          <Cell value="X" canHighlight={false}/>
-          <Cell value="X" canHighlight={true}/>
-          <Cell value="0" canHighlight={false}/>
-          <Cell value="X" canHighlight={false}/>
+          {cells}
       </div>
   );
 }
