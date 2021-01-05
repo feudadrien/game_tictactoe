@@ -6,11 +6,16 @@ import './Game.css';
 // import and conver App.js then export
 // replace the board div with the baord component.
 export const Game = () => {
+    const cellValues = ['0', 'X', 'X', '0', 'X', 'X', 'X', '0', 'X'];
+    const winningCombination = [2, 4, 6];
   return ( 
     <> 
     <div id="game">
       <h1>Tic Tac Toe</h1>
-      <Board />
+      <Board 
+      cellValues={cellValues}
+      winningCombination={winningCombination}
+      />
   </div>
 
   <div id="modal-overlay">
