@@ -8,6 +8,11 @@ import './Game.css';
 export const Game = () => {
     const cellValues = ['', '', '', '', '', '', '', '', ''];
     const winningCombination = [];
+
+    const onCellClicked = (cellIndex) => {
+        console.log(`Cell ${cellIndex} clicked.`);
+      }
+
   return ( 
     <> 
     <div id="game">
@@ -15,6 +20,7 @@ export const Game = () => {
       <Board 
       cellValues={cellValues}
       winningCombination={winningCombination}
+      cellClicked={onCellClicked}
       />
   </div>
 
