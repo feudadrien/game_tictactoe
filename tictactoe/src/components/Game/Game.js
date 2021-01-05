@@ -9,6 +9,7 @@ import './Game.css';
 export const Game = () => {
     const [cellValues, setCellValues] = useState(['', '', '', '', '', '', '', '', '']);
     const [xIsNext, setXIsNext] = useState(true);
+    const [isGameOver, setIsGameOver] = useState(false);
     const winningCombination = [];
 
     // lock the cell after clicking once
@@ -17,9 +18,15 @@ export const Game = () => {
     const onCellClicked = (cellIndex) => {
         if (isCellEmpty(cellIndex)) {
         const newCellValues = [...cellValues];
+
+        // calculate result
+
+       
+
        newCellValues[cellIndex] = xIsNext? 'X': '0';
        setCellValues(newCellValues);
        setXIsNext(!xIsNext);
+       setIsGameOver(true);
         }
       };
 
@@ -36,7 +43,7 @@ export const Game = () => {
   </div>
 
   <ResultModal 
-   isGameOver={false}/>
+   isGameOver={isGameOver}/>
   </>
   );
 }
