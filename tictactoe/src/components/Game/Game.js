@@ -19,6 +19,17 @@ export const Game = () => {
     // lock the cell after clicking once
     const isCellEmpty = (cellIndex) => cellValues[cellIndex] === '';
 
+    // restart game 
+    const restartGame = () => {
+        setCellValues(['', '', '', '', '', '', '', '', '']);
+       setXIsNext(true);
+       setIsGameOver(false);
+       setNumberOfTurnsLeft(9);
+       setWinner(undefined);
+       setWinningCombination([]);
+
+    };
+
     const onCellClicked = (cellIndex) => {
         if (isCellEmpty(cellIndex)) {
         const newCellValues = [...cellValues];
@@ -52,7 +63,8 @@ export const Game = () => {
 
   <ResultModal 
    isGameOver={isGameOver}
-   winner={winner}/>
+   winner={winner}
+   onNewGameClicked={restartGame}/>
   </>
   );
 }
