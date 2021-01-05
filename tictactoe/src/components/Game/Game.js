@@ -11,6 +11,8 @@ export const Game = () => {
     const [cellValues, setCellValues] = useState(['', '', '', '', '', '', '', '', '']);
     const [xIsNext, setXIsNext] = useState(true);
     const [isGameOver, setIsGameOver] = useState(false);
+    const [numberOfTurnsLeft, setNumberOfTurnsLeft] = useState(9);
+
     const winningCombination = [];
 
     // lock the cell after clicking once
@@ -20,14 +22,16 @@ export const Game = () => {
         if (isCellEmpty(cellIndex)) {
         const newCellValues = [...cellValues];
         newCellValues[cellIndex] = xIsNext? 'X': '0';
+        const newNumberOfTurnsLeft = numberOfTurnsLeft - 1;
         // calculate result
-const calcResult = calculateWinner(newCellValues, cellIndex);
+    const calcResult = calculateWinner(newCellValues, newNumberOfTurnsLeft, cellIndex);
        
-
+ 
       
        setCellValues(newCellValues);
        setXIsNext(!xIsNext);
-       setIsGameOver(calcResult );
+       setIsGameOver(calcResult.hasResult);
+       setNumberOfTurnsLeft(newNumberOfTurnsLeft);
         }
       };
 

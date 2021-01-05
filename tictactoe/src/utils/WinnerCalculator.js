@@ -11,7 +11,7 @@ const winningMatrix = {
 };
 
 
-export const calculateWinner = (cellValues, cellIndex) => {
+export const calculateWinner = (cellValues, numberOfTurnsLeft, cellIndex) => {
   
     const winningRanges = winningMatrix[cellIndex];
 
@@ -28,6 +28,14 @@ export const calculateWinner = (cellValues, cellIndex) => {
            
         }; 
         }
+    }
+
+    if (numberOfTurnsLeft === 0) {
+        return {
+            hasResult: true,
+            winner: undefined,
+            winningCombination: []
+        };
     }
     return {
         hasResult: false,
