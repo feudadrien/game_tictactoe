@@ -9,3 +9,5 @@ A tic tac toe game using React.js
 ![demo](Demo.gif)
 
 2. deploying on Github pages
+
+![deploy website](https://snubia.github.io/game_tictactoe/)
