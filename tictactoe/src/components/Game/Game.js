@@ -52,7 +52,7 @@ export const Game = () => {
   return ( 
     <> 
     <div id="game">
-      <h1>Tic Tac Toe</h1>
+      <h1>Tic-tac-toe Game</h1>
       <Board 
       cellValues={cellValues}
       winningCombination={winningCombination}
